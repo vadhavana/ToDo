@@ -1,0 +1,36 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <title>{{ title }}</title>  
+    {% load staticfiles %}  
+    <link rel="stylesheet" href="{% static 'todo/css/bootstrap.min.css' %}"/>  
+    <link rel="stylesheet" type="text/css" href="{% static 'todo/css/style.css' %}"/>  
+</head>  
+
+<body style="background-color:#604b75">
+        <div class="container-fullwidth ">
+                <nav class="navbar navbar-expand-sm navbar-light  bg-light">
+                        <a class="navbar-brand" href="/">Home</a>
+                        <ul class="navbar-nav mr-auto">
+                                <li class="nav-item active">
+                                 <a class="nav-link" href="/todo/">Todo <span class="sr-only">(current)</span></a>
+                                </li>
+                        </ul>
+                        
+                        {% if user.is_authenticated %}
+                        <h5 class="text-dark" style="float:right;">Hello {{ request.user }}!!</h5>&nbsp;&nbsp;
+                        <form action="{% url 'logout' %}" method="post">  {% csrf_token %}
+                                <button class="btn btn-outline-danger" onclick="window.location='/logout/';"  type="submit">Logout</button>
+                                <!-- <button class="btn btn-outline-danger" onclick="window.location='/logout/';"  type="submit">Logout</button> -->
+                        </form>
+                        {% else %}
+                        <button class="btn btn-outline-success" onclick="window.location='/login/';" type="submit">Login</button>&nbsp;&nbsp;
+                        <button class="btn btn-outline-primary" onclick="window.location='/signup/';" type="submit">Register</button>&nbsp;&nbsp;
+                        {% endif %}
+                </nav>              
+        </div>        
+{% block content %}
+{% endblock %}
+</body>  
+</html>  

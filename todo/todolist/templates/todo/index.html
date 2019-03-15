@@ -1,0 +1,10 @@
+{% extends 'todo/base.html' %}
+
+{% block content %}
+<div class="container">
+    <h1 class="text-white">Today's List</h1><br>
+    {% for posts in post%}
+         <b><p class="todo-list rounded col-md-8">{{ posts.task }}<span class="badge badge-primary" style="float:right;">{{ posts.author }}</span></p></b>
+    {% endfor %}
+</div>
+{% endblock %}

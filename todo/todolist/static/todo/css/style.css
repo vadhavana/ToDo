@@ -1,0 +1,40 @@
+.site-form{
+    margin-top:60px;
+    border:2px solid white;
+    padding:20px;
+}
+
+.site-form input{
+    display:block;
+    margin:10px 0 0 0;
+        
+}
+.helptext ,helptext ul{
+    display:block;
+    margin:0 auto 20px;
+    font-size:0.9em
+}
+.errorlist{
+    padding:0;
+}
+.errorlist li{
+    padding:10px;
+    list-style-type:none;
+    border:1px solid red;
+    color:red;
+    margin:10px 0;
+}
+h1{
+    text-align:center;
+    margin-top:10px;
+}
+nav{
+    border:1px solid rgb(65, 48, 82);
+    margin: 10px;
+}
+.todo-list{
+    padding:5px;
+    background:white;
+    opacity:0.9;
+    margin:10px 10px 10px 10px;
+}

@@ -1,0 +1,22 @@
+{% extends 'todo/base.html' %}
+
+
+{% block content %}
+<form method="POST" class="form-group" action="/todo/">{% csrf_token %}
+            <div class="container ">
+                <h1 class="text-white">To Do List</h1><br>
+                    <!-- {{ form }} -->
+                    <label class="text-light font-weight-bold">Task</label><br>
+                    <input class="col-md-6 form-control " type="text" name="task" placeholder="What Is Your Today's Plan!!" required><br>
+                    <input type="submit" value="Add" class="btn btn-outline-light">  
+                        <br><br><br>
+                        {% for posts in post%} 
+                        <b><p class="list-group-item list-group-item-light col-md-7 rounded">{{ posts.task }}
+                            <!-- <input class="btn btn-danger pull-right" type="submit" value="X" name="delete" style="float:right" onclick="" > -->
+                            <a href="/delete/{{ posts.id }}" class="text-danger" style="float:right;font-size: 20px;text-decoration:none;"> X </a>                        
+                        </p></b><br>
+                        {% endfor %}
+            </div>          
+</form> 
+
+{% endblock %}

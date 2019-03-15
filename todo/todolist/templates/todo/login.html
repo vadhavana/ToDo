@@ -1,0 +1,13 @@
+{% extends 'todo/base.html' %}
+
+{% block content %}
+<div class="container text-white">
+        <h1>Login</h1>
+        <form class=" form form-group site-form" method="post" action="/login/">
+                {% csrf_token %}
+                {{ form }}
+                <input type="submit" value="login" class="btn btn-success">
+               <p>New Here?</p> <a href="/signup">Click Here!!</a>
+        </form>
+</div>
+{% endblock %}
